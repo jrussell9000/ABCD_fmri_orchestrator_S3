@@ -26,4 +26,4 @@ dependencies:
   - pip
   - pip:
     # Install the first-level package from GitHub (update URL when repo is published)
-    - "git+https://github.com/tjkeding/fmri_first_level_proc.git"
+    - "git+https://github.com/jrussell9000/fmri_first_level_proc.git"
