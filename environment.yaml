@@ -24,6 +24,6 @@ dependencies:
   - matplotlib     # QC carpet plots and tSNR visualization
   - boto3          # AWS S3 data transfer
   - pip
-  # - pip:
-  #   # Install the first-level package from GitHub (update URL when repo is published)
-  #   - "git+https://github.com/jrussell9000/fmri_first_level_proc.git"
+  - pip:
+    # Install the first-level package from GitHub (update URL when repo is published)
+    - "git+https://github.com/jrussell9000/fmri-first-level-proc.git"
