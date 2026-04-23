@@ -446,10 +446,10 @@ def extract_session_archive(archive_path, target_dir, logger):
     logger.info("Extracting archive: %s -> %s", archive_path, target_dir)
     os.makedirs(target_dir, exist_ok=True)
 
-    # Disk space check: require at least 10x archive size free
+    # Disk space check: require at least 1.5x archive size free
     archive_size = os.path.getsize(archive_path)
     free_space = shutil.disk_usage(target_dir).free
-    required = archive_size * 10  # conservative estimate for extraction
+    required = archive_size * 1.5  # conservative estimate for extraction
     if free_space < required:
         raise OrchestratorError(
             f"Insufficient disk space for extraction. "
@@ -1892,7 +1892,6 @@ def compute_tsnr(bold_path, mask_path, out_dir, out_prefix, logger):
     return median_tsnr
 
 def generate_carpet_plot(bold_path, mask_path, confounds_path, n_remove, out_path, logger):
-
     """
     Generate a carpet plot: DVARS trace on top, voxel x time heatmap below.
 
