@@ -814,7 +814,10 @@ def _process_session(config, sub_id, session, proc_template, skip_qc, skip_first
                     analysis_list = load_and_validate(config_path, logger)
                     logger.info("First-level config validated: %d analysis block(s).", len(analysis_list))
 
-                    for i, (atype, ns, name) in enumerate(analysis_list):
+                    # fmri_first_level_proc >= 3.1.0 returns ResolvedConfig
+                    # dataclasses, not (type, namespace, name) tuples.
+                    for i, ns in enumerate(analysis_list):
+                        atype, name = ns.analysis_type, ns.analysis_name
                         logger.info("-" * 60)
                         logger.info("Running analysis [%d]: %s (type: %s)", i, name, atype)
                         logger.info("-" * 60)

@@ -64,7 +64,7 @@ conda activate ABCD_fmri_orchestrator_S3
 3dinfo -ver
 ```
 
-The conda environment installs `fmri_first_level_proc` directly from GitHub via pip. **Requires `fmri_first_level_proc` >= 2.5.0.** See `environment.yaml` for the full dependency list.
+The conda environment installs `fmri_first_level_proc` directly from GitHub via pip. **Requires `fmri_first_level_proc` >= 3.1.0** (Python >= 3.12). See `environment.yaml` for the full dependency list.
 
 ## Quick Start
 
